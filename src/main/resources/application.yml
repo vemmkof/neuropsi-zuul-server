@@ -1,0 +1,41 @@
+server:
+  port: ${PORT:8762}
+spring:
+  application:
+    name: neuropsi-zuul-service
+  security:
+    user:
+      name: ${USERNAME:username}
+      password: ${PASSWORD:password}
+  profiles:
+    active: ${PROFILE:dev}
+eureka:
+  instance:
+    hostname: ${HOSTNAME:localhost}
+  client:
+    service-url:
+      # ${EUREKA_URL:https://eureka-server:b9cd4bdd5f554c576ba9e85b097f2be0@safe-shore-20278.herokuapp.com}/eureka/
+      defaultZone: ${EUREKA_URL:http://username:password@localhost:8761}/eureka/
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    shutdown:
+      enabled: true
+zuul:
+  ignored-services: '*'
+  routes:
+    neuropsi-oauth-service:
+      path: /auth/**
+      serviceId: neuropsi-oauth-service
+      # http://arcane-caverns-31516.herokuapp.com/
+      url: ${OAUTH_URL:localhost}
+  sensitive-headers:
+    - Cookie
+    - Set-Cookie
+ribbon:
+  eager-load:
+    enabled: false
