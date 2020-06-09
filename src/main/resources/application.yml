@@ -33,18 +33,11 @@ zuul:
       serviceId: neuropsi-oauth-service
       # http://arcane-caverns-31516.herokuapp.com/
       url: ${OAUTH_URL:localhost}
-      sensitiveHeaders:
-        - Cookie
-        - Set-Cookie
     neuropsi-record-service:
       path: /api/record/**
       serviceId: neuropsi-record-service
       # https://secure-temple-30333.herokuapp.com
       url: ${RECORD_URL:localhost}
-      stripPrefix: false
-      sensitiveHeaders:
-        - Cookie
-        - Set-Cookie
   sensitive-headers:
     - Cookie
     - Set-Cookie
