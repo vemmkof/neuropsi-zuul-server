@@ -10,9 +10,8 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 @SpringBootApplication
 public class NeuropsiZuulServerApplication {
 
-  public static void main(String[] args) {
-    SpringApplication.run(NeuropsiZuulServerApplication.class, args);
-  }
-
+    public static void main(String[] args) {
+        SpringApplication.run(NeuropsiZuulServerApplication.class, args);
+    }
 
 }

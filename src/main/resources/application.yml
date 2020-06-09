@@ -42,6 +42,7 @@ zuul:
   sensitive-headers:
     - Cookie
     - Set-Cookie
+    - Authorization
 ribbon:
   eager-load:
     enabled: false
