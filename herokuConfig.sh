@@ -1,8 +1,16 @@
 #!/bin/bash
-heroku config:set USERNAME=neuropsi
-heroku config:set PASSWORD=0e4e034f3504195e386b1bdcf4fbfe78
-heroku config:set PROFILE=dev
-heroku config:set HOSTNAME=protected-caverns-83632.herokuapp.com
-heroku config:set OAUTH_URL=http://arcane-caverns-31516.herokuapp.com/
-heroku config:set RECORD_URL=https://secure-temple-30333.herokuapp.com/
-heroku config:set EUREKA_URL=https://neuropsi:0e4e034f3504195e386b1bdcf4fbfe78@safe-shore-20278.herokuapp.com
+appname="peaceful-thicket-50626"
+username="neuropsi"
+password="0e4e034f3504195e386b1bdcf4fbfe78"
+hotsname="$appname.herokuapp.com"
+oauth="http://arcane-caverns-31516.herokuapp.com/"
+record="https://secure-temple-30333.herokuapp.com/"
+eureka_instance="infinite-crag-20939.herokuapp.com"
+eureka="https://$username:$password@$eureka_instance"
+heroku config:set USERNAME=$username --app $appname
+heroku config:set PASSWORD=$password --app $appname
+heroku config:set PROFILE=prod --app $appname
+heroku config:set HOSTNAME=$hotsname --app $appname
+heroku config:set OAUTH_URL=$oauth --app $appname
+heroku config:set RECORD_URL=$record --app $appname
+heroku config:set EUREKA_URL=$eureka --app $appname
