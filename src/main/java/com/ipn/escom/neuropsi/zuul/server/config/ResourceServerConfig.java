@@ -20,6 +20,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
+                .antMatchers(HttpMethod.POST, "/api/record/user/reset/password").permitAll()
                 .antMatchers(HttpMethod.POST, "/auth/oauth/**").permitAll()
                 .anyRequest().authenticated()
                 .and().cors().configurationSource(getConfigurationSource());
