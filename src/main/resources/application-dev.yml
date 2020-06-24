@@ -14,6 +14,9 @@ management:
     shutdown:
       enabled: true
 zuul:
+  ignored-headers:
+    - Access-Control-Allow-Credentials
+    - Access-Control-Allow-Origin
   ignored-services: '*'
   routes:
     neuropsi-oauth-service:
